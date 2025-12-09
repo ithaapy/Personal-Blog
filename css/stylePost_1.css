@@ -1,0 +1,170 @@
+/* Import warna dan reset dari main file */
+:root {
+    --one:#f7cac9;
+    --two: #dec2cb;
+    --four: #abb1cf;
+    --five: #92a8d1;
+    --six:  #5d79aa;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #333;
+    background: linear-gradient(var(--one), var(--two), var(--four), var(--five));
+
+    min-height: 100vh;
+    line-height: 1.6;
+    padding-top: 70px; 
+}
+
+/* ========== NAVBAR UTAMA (sama seperti main file) ========== */
+.main-nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px 20px;
+    text-align: center;
+    align-items: center;
+
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;   
+    justify-content: center;
+}
+
+.main-nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 10px; 
+    border-radius: 20px;
+    transition: all 0.2 ease;
+    position: relative;
+    display: block;
+    width: auto; 
+}
+
+.main-nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+.main-nav ul li a:hover::before {
+    transform: scale(1);
+}
+
+.main-nav ul li a:hover {
+    color: var(--baby-blue-ice-2);
+    text-decoration: none;
+}
+
+/* ========== NAVBAR SUBFILE (daftar isi) ========== */
+.sub-nav {
+    width: 100%;
+    padding: 20px 20px;
+    border-radius: 20px;
+    margin-top: 25px;
+
+    /* Pastikan semua isi align kiri */
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* Container daftar isi */
+.sub-nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    /* ini bikin bubble sejajar kiri, bukan center */
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    /* Hapus efek center dari max-width parent */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Bubble tiap item */
+.sub-nav ul li a {
+    padding: 5px 10px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    color: var(--six);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.25s ease;
+    border: 1px solid rgba(255,255,255,0.4);
+    display: inline-block;
+}
+
+/* Hover bubble */
+.sub-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--four);
+    transform: translateY(-2px);
+}
+
+.content-box {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    padding: 50px 50px;
+    margin: 30px auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    max-width: 1000px;
+
+    
+}
+
+
+/* Heading */
+h1, h2, h4 {
+    color: var(--six);
+    margin-bottom: 10px;
+    scroll-margin-top: 100px;
+}
+
+ul {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+a {
+    color: var(--six);
+}
+a:hover {
+    color: var(--four);
+}

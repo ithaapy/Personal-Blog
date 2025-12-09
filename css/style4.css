@@ -1,0 +1,244 @@
+:root {
+    /* color 1 */
+    --mauve: #bbadffff;
+    --powder-blue: #ada7ffff;
+    --wisteria-blue: #9fa0ffff;
+    --soft-periwinkle-2: #8e94f2ff;
+    --soft-periwinkle: #8187dcff;
+    --glaucous: #757bc8ff;
+
+    /* color 2 */
+    --almond-cream: #ede0d4ff;
+    --pale-oak: #e6ccb2ff;
+    --tan: #ddb892ff;
+    --faded-copper: #b08968ff;
+    --coffee-bean: #7f5539ff;
+
+    --alice-blue: #e6f3ffff;
+    --pale-sky: #d5e7feff;
+    --pale-sky-2: #c3dafcff;
+    --baby-blue-ice: #b2cefbff;
+    --baby-blue-ice-2: #a0c2f9ff;
+    --baby-blue-ice-3: #8fb5f8ff;
+    --cool-horizon: #7da9f6ff;
+
+    --minus-two: #f2a8a6;
+    --minus-one: #f4b9b8;
+    --one:#f7cac9;
+    --two: #dec2cb;
+    --three: #c5b9cd;
+    --four: #abb1cf;
+    --five: #92a8d1;
+    --six:  #5d79aa;
+
+}
+
+/*
+ background: linear-gradient(
+       var(--alice-blue),
+       var(--pale-sky),
+       var(--pale-sky-2), 
+       var(--baby-blue-ice)
+    );
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #333;
+    background: linear-gradient(
+       var(--one),
+       var(--two),
+       var(--four), 
+       var(--five)
+    );
+    min-height: 100vh;
+    line-height: 1.6;
+    padding-top: 40px;
+}
+
+/*====== NAVIGATION ======*/
+nav {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 20px 20px;
+    text-align: center;
+    align-items: center;
+
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 50px;   
+    justify-content: center;
+
+   
+}
+
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 10px; 
+    border-radius: 20px;
+    transition: all 0.2 ease;
+    position: relative;
+    display: block;
+    width: auto; 
+}
+
+nav ul li a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transform: scale(0);
+    transition: transform 0.2s ease;
+}
+
+nav ul li a:hover::before {
+    transform: scale(1);
+}
+
+nav ul li a:hover {
+    color: var(--baby-blue-ice-2);
+    text-decoration: none;
+}
+
+
+
+/*====== SECTION ======*/
+section {
+    padding: 20px;
+    margin-top: 50px;
+    scroll-margin-top: 100px;
+}
+
+section ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+section ul li {
+    margin-bottom: 6px;
+}
+
+
+section .homeText {
+    max-width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.homeContainer {
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    flex-direction: row-reverse;
+    gap: 60px;
+}
+
+.homeContainer img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+
+section .profileText {
+    max-width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+section .portofolioText {
+    max-width: 100%;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/*====== HEADING ======*/
+
+h1 {
+    font-size: 32px;
+    color: var(--six);
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    color: var(--glaucous);
+}
+
+
+/*====== LINK ======*/
+a {
+    color: var(--six);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--four);
+    text-decoration: underline;
+}
+
+
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: var(--six);
+    opacity: 0.8;
+
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
