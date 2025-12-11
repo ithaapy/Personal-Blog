@@ -160,19 +160,20 @@ section .homeText {
 
 .homeContainer {
     display: flex;
-    flex-direction: column; 
     align-items: center;
-    text-align: center;
-    gap: 20px;
+    justify-content:left;
+    flex-direction: row-reverse;
+    gap: 60px;
 }
 
 .homeContainer img {
-    width: min(200px, 60vw);
-    height: min(200px, 60vw);
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
 }
-
 
 
 section .profileText {
@@ -240,5 +241,3 @@ a:hover {
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
-
-
