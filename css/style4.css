@@ -44,7 +44,7 @@ html {
 }
 
 body {
-    color: #333;
+    color: #2b2b2b;
     background: linear-gradient(
        var(--one),
        var(--two),
@@ -119,7 +119,7 @@ nav ul li a:hover {
 /*====== SECTION ======*/
 section {
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 25px;
     scroll-margin-top: 120px;
     position: relative; /* Untuk pembatas */
 }
@@ -133,54 +133,33 @@ section ul li {
     margin-bottom: 6px;
 }
 
-/* Kelas umum untuk semua bagian utama */
 .section-content {
-    max-width: 100%;
+    max-width: 900%;
     margin: 0 auto;
-    padding: 40px 50px;
+    padding: 28px 32px ;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
 }
 
-/* Warna berbeda untuk setiap section (bubble terpisah) */
 #home .section-content {
-    background: rgba(146, 168, 209, 0.55); /* Biru muda untuk home */
+    background: rgba(255, 255, 255, 0.6); /* Biru muda untuk home */
 }
 
 #profile .section-content {
-    background: rgba(247, 202, 201, 0.55); /* Pink untuk profile */
+    background: rgba(255, 255, 255, 0.6); /* Pink untuk profile */
 }
 
 #portofolio .section-content {
-    background: rgba(171, 177, 207, 0.55); /* Ungu untuk portofolio */
-}
-
-/* Pembatas (divider) antara section */
-section::after {
-    content: '';
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--six), transparent);
-    opacity: 0.5;
-}
-
-/* Hilangkan pembatas di section terakhir */
-#portofolio::after {
-    display: none;
+    background: rgba(255, 255, 255, 0.6); /* Ungu untuk portofolio */
 }
 
 /* Khusus untuk Home: Layout responsif */
 .homeContainer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    justify-content: left;
     gap: 60px;
 }
 
@@ -196,7 +175,7 @@ section::after {
 /*====== HEADING ======*/
 h1 {
     font-size: clamp(28px, 5vw, 32px);
-    color: var(--six);
+    color: #4b5f8a;
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
@@ -205,14 +184,15 @@ h3 {
     font-size: clamp(20px, 4vw, 22px);
     margin-top: 25px;
     margin-bottom: 10px;
-    color: var(--glaucous);
+    color: #5a6f9c;
 }
 
 /*====== LINK ======*/
 a {
-    color: var(--six);
+    color: #516fa3;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 500;
 }
 
 a:hover {
@@ -224,7 +204,7 @@ a:hover {
 .footer {
     width: 100%;
     padding: 20px 0;
-    margin-top: 40px;
+    margin-top: 25px;
     text-align: center;
     font-size: 14px;
     color: var(--six);
