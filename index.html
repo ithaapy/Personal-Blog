@@ -18,27 +18,22 @@
             <li><a href="#profile">Profile</a></li>
             <li><a href="#portofolio">Portofolio</a></li>
         </ul>
-        <!-- Menu Hamburger untuk Mobile -->
-        <div class="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </nav>
 
     <main>
         <section id="home">
-            <div class="section-content homeContainer"> <!-- Perubahan: Gabung kelas -->
-                <div>
-                    <h1>Hello! I'm Nitha</h1>
-                    <p>Interested and focused on learning Frontend Development & UI/UX</p>
-                </div>
-                <img src="asset/me-4new.jpg" alt="my photo">
+        <div class="section-content homeContainer">
+            <img src="asset/me-4new.jpg" alt="my photo">
+
+            <div class="homeText">
+                <h1>Hello! I'm Nitha</h1>
+                <p>Interested and focused on learning Frontend Development & UI/UX</p>
             </div>
-        </section>     
+        </div>
+    </section>  
 
         <section id="profile">
-            <div class="section-content"> <!-- Perubahan: Ganti kelas -->
+            <div class="section-content"> 
                 <h1>Profile</h1>
                 <p>I am a student who focuses on building a strong foundation in frontend development and UI/UX. I like neat and easy-to-use designs. Currently, I am deepening my knowledge of HTML, CSS, and JavaScript to create more dynamic websites.</p>
                 <br>
@@ -51,9 +46,10 @@
                 <br>
                 <h3>Skills</h3>
                 <ul>
-                    <li>HTML & CSS</li>
-                    <li>Java (Beginner)</li>
-                    <li>Figma (Beginner)</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Java</li>
+                    <li>Figma</li>
                 </ul>
                 <br>
                 <h3>Goals</h3>
@@ -75,15 +71,5 @@
     <footer class="footer">
         <p>© 2025 Ithaapy — All rights reserved.</p>
     </footer>
-
-    <!-- Script untuk Menu Hamburger -->
-    <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navUl = document.querySelector('nav ul');
-
-        hamburger.addEventListener('click', () => {
-            navUl.classList.toggle('active');
-        });
-    </script>
 </body>
 </html>
