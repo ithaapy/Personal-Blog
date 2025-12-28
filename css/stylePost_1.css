@@ -1,13 +1,13 @@
-/* ================= ROOT ================= */
+/* Import warna dan reset dari main file */
 :root {
-    --one: #f7cac9;
+    --one:#f7cac9;
     --two: #dec2cb;
     --four: #abb1cf;
     --five: #92a8d1;
     --six:  #5d79aa;
 }
 
-/* ================= RESET ================= */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -19,60 +19,63 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ================= BODY ================= */
 body {
     color: #333;
-    background: linear-gradient(
-        var(--one),
-        var(--two),
-        var(--four),
-        var(--five)
-    );
+    background: linear-gradient(var(--one), var(--two), var(--four), var(--five));
+
     min-height: 100vh;
-    line-height: 1.7;
-    padding-top: 90px; /* ruang navbar fixed */
+    line-height: 1.6;
+    padding-top: 70px; 
 }
 
-/* ================= NAVBAR ================= */
+/* ========== NAVBAR UTAMA (sama seperti main file) ========== */
 .main-nav {
     width: 100%;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px);
-    padding: 20px;
+    padding: 20px 20px;
     text-align: center;
+    align-items: center;
+
+
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 40px;
+    gap: 50px;   
+    justify-content: center;
 }
 
 .main-nav ul li a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    padding: 10px 16px;
+    padding: 8px 10px; 
     border-radius: 20px;
+    transition: all 0.2 ease;
     position: relative;
-    transition: all 0.3s ease;
+    display: block;
+    width: auto; 
 }
 
 .main-nav ul li a::before {
-    content: "";
+    content: '';
     position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.25);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     transform: scale(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .main-nav ul li a:hover::before {
@@ -80,100 +83,6 @@ body {
 }
 
 .main-nav ul li a:hover {
-    color: var(--six);
-}
-
-/* ================= CONTENT ================= */
-.content-box {
-    max-width: 1100px;
-    margin: 30px auto 50px;
-    padding: 40px 48px;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-/* ================= TYPOGRAPHY ================= */
-h1 {
-    font-size: clamp(26px, 4vw, 32px);
-    color: #4b5f8a;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: clamp(20px, 3.5vw, 24px);
-    color: #4b5f8a;
-    margin: 30px 0 10px;
-    scroll-margin-top: 120px;
-}
-
-p {
-    margin-bottom: 12px;
-}
-
-b {
-    color: #5a6f9c;
-}
-
-/* ================= LIST ================= */
-ul {
-    margin-left: 20px;
-    margin-bottom: 30px;
-}
-
-ul li {
-    margin-bottom: 6px;
-}
-
-/* ================= LINK ================= */
-a {
-    color: var(--six);
+    color: var(--baby-blue-ice-2);
     text-decoration: none;
-    font-weight: 500;
-}
-
-a:hover {
-    color: var(--four);
-    text-decoration: underline;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-
-    body {
-        padding-top: 120px;
-    }
-
-    .main-nav ul {
-        gap: 14px;
-        flex-wrap: wrap;
-    }
-
-    .main-nav ul li a {
-        padding: 8px 12px;
-        font-size: 14px;
-    }
-
-    .content-box {
-        margin: 20px 12px 40px;
-        padding: 20px 16px;
-        max-width: 100%;
-    }
-
-    h1 {
-        font-size: 22px;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    p, li {
-        font-size: 14.5px;
-    }
-
-    ul {
-        margin-bottom: 20px;
-    }
 }
