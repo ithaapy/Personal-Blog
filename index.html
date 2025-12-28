@@ -10,8 +10,6 @@
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-
 </head>
 <body>
     <nav>
@@ -20,73 +18,72 @@
             <li><a href="#profile">Profile</a></li>
             <li><a href="#portofolio">Portofolio</a></li>
         </ul>
+        <!-- Menu Hamburger untuk Mobile -->
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </nav>
 
     <main>
         <section id="home">
-            <div class="homeText homeContainer">
+            <div class="section-content homeContainer"> <!-- Perubahan: Gabung kelas -->
                 <div>
-            <h1>Hello! I'm Nitha</h1>
-            <p>Interested and focused on learning Frontend Development & UI/UX</p>
+                    <h1>Hello! I'm Nitha</h1>
+                    <p>Interested and focused on learning Frontend Development & UI/UX</p>
+                </div>
+                <img src="asset/me-4new.jpg" alt="my photo">
             </div>
-
-            <img src="asset/me-4new.jpg" alt="my photo">
-        </div>
         </section>     
 
         <section id="profile">
-            <div class="profileText">
-            <h1>Profile</h1>
-
+            <div class="section-content"> <!-- Perubahan: Ganti kelas -->
+                <h1>Profile</h1>
                 <p>I am a student who focuses on building a strong foundation in frontend development and UI/UX. I like neat and easy-to-use designs. Currently, I am deepening my knowledge of HTML, CSS, and JavaScript to create more dynamic websites.</p>
-
                 <br>
-
-                <h3>Hobby </h3>
+                <h3>Hobby</h3>
                 <ul>
                     <li>Listening to Music</li>
                     <li>Watching Korean Dramas</li>
                     <li>Reading Comics</li>
                 </ul>
-
                 <br>
-
                 <h3>Skills</h3>
                 <ul>
                     <li>HTML & CSS</li>
                     <li>Java (Beginner)</li>
                     <li>Figma (Beginner)</li>
                 </ul>
-
                 <br>
-
                 <h3>Goals</h3>
                 <p>Survive and Stay Alive</p>
             </div>
-
-
         </section>
         
         <section id="portofolio">
-            <div class="portofolioText">
-            <h1>Portofolio</h1>
-            <p>Assignments and Mini Projects </p>
-
-            <ul>
-                <li>Tugas Pengantar Teknologi Informasi <p><a href="post1.html">Pengumpulan Informasi untuk Pengambilan Keputusan</a></p>
-                </li>
-            </ul>
+            <div class="section-content"> <!-- Perubahan: Ganti kelas -->
+                <h1>Portofolio</h1>
+                <p>Assignments and Mini Projects</p>
+                <ul>
+                    <li>Tugas Pengantar Teknologi Informasi <p><a href="post1.html">Pengumpulan Informasi untuk Pengambilan Keputusan</a></p></li>
+                </ul>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
-    <p>© 2025 Ithaapy — All rights reserved.</p>
+        <p>© 2025 Ithaapy — All rights reserved.</p>
     </footer>
 
+    <!-- Script untuk Menu Hamburger -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navUl = document.querySelector('nav ul');
+
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
-
-
-
