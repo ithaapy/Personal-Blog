@@ -24,23 +24,13 @@
 
     --minus-two: #f2a8a6;
     --minus-one: #f4b9b8;
-    --one:#f7cac9;
+    --one: #f7cac9;
     --two: #dec2cb;
     --three: #c5b9cd;
     --four: #abb1cf;
     --five: #92a8d1;
-    --six:  #5d79aa;
-
+    --six: #5d79aa;
 }
-
-/*
- background: linear-gradient(
-       var(--alice-blue),
-       var(--pale-sky),
-       var(--pale-sky-2), 
-       var(--baby-blue-ice)
-    );
-*/
 
 * {
     margin: 0;
@@ -63,7 +53,7 @@ body {
     );
     min-height: 100vh;
     line-height: 1.6;
-    padding-top: 40px;
+    padding-top: 80px; /* Ditingkatkan untuk nav yang lebih tinggi */
 }
 
 /*====== NAVIGATION ======*/
@@ -71,40 +61,36 @@ nav {
     width: 100%;
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px);
-    padding: 20px 20px;
+    padding: 20px;
     text-align: center;
-    align-items: center;
-
-
     position: fixed;
     z-index: 1000;
     top: 0;
     left: 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 nav ul {
     list-style: none;
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 50px;   
+    gap: 50px;
     justify-content: center;
-
-   
+    margin: 0;
+    padding: 0;
 }
-
 
 nav ul li a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
-    padding: 8px 10px; 
+    padding: 10px 15px;
     border-radius: 20px;
-    transition: all 0.2 ease;
+    transition: all 0.3s ease; /* Lebih halus */
     position: relative;
     display: block;
-    width: auto; 
+    width: auto;
 }
 
 nav ul li a::before {
@@ -117,7 +103,8 @@ nav ul li a::before {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     transform: scale(0);
-    transition: transform 0.2s ease;
+    transition: transform 0.3s ease;
+    will-change: transform; /* Optimasi performa */
 }
 
 nav ul li a:hover::before {
@@ -129,13 +116,29 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
+/* Menu Hamburger untuk Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 3px 0;
+    transition: 0.3s;
+}
 
 /*====== SECTION ======*/
 section {
     padding: 20px;
     margin-top: 50px;
-    scroll-margin-top: 100px;
+    scroll-margin-top: 120px; /* Sesuaikan dengan nav */
 }
 
 section ul {
@@ -147,10 +150,10 @@ section ul li {
     margin-bottom: 6px;
 }
 
-
-section .homeText {
+/* Kelas umum untuk semua bagian utama (mengganti .homeText, .profileText, .portofolioText) */
+.section-content {
     max-width: 100%;
-    margin: auto;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(10px);
     padding: 40px 50px;
@@ -158,10 +161,11 @@ section .homeText {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
+/* Khusus untuk Home: Layout responsif */
 .homeContainer {
     display: flex;
     align-items: center;
-    justify-content:left;
+    justify-content: space-between;
     flex-direction: row-reverse;
     gap: 60px;
 }
@@ -175,50 +179,26 @@ section .homeText {
     flex-shrink: 0;
 }
 
-
-section .profileText {
-    max-width: 100%;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-section .portofolioText {
-    max-width: 100%;
-    margin: auto;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
-    padding: 40px 50px;
-    border-radius: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-
 /*====== HEADING ======*/
-
 h1 {
-    font-size: 32px;
+    font-size: clamp(28px, 5vw, 32px); /* Responsif: minimum 28px, maks 32px */
     color: var(--six);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 h3 {
-    font-size: 22px;
+    font-size: clamp(20px, 4vw, 22px); /* Responsif */
     margin-top: 25px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     color: var(--glaucous);
 }
-
 
 /*====== LINK ======*/
 a {
     color: var(--six);
     text-decoration: none;
-    transition: 0.2s;
+    transition: color 0.3s ease;
 }
 
 a:hover {
@@ -226,7 +206,7 @@ a:hover {
     text-decoration: underline;
 }
 
-
+/*====== FOOTER ======*/
 .footer {
     width: 100%;
     padding: 20px 0;
@@ -235,10 +215,55 @@ a:hover {
     font-size: 14px;
     color: var(--six);
     opacity: 0.8;
-
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px);
-
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Bayangan atas untuk efek floating */
 }
 
+/*====== RESPONSIVITAS (Media Queries) ======*/
+@media (max-width: 768px) {
+    body {
+        padding-top: 70px; /* Kurangi untuk mobile */
+    }
+
+    nav ul {
+        display: none; /* Sembunyikan menu default */
+        flex-direction: column;
+        gap: 20px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    nav ul.active {
+        display: flex; /* Tampilkan saat aktif */
+    }
+
+    .hamburger {
+        display: flex; /* Tampilkan hamburger */
+    }
+
+    .homeContainer {
+        flex-direction: column; /* Stack vertikal di mobile */
+        gap: 30px;
+        text-align: center;
+    }
+
+    .homeContainer img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .section-content {
+        padding: 20px 25px; /* Kurangi padding di mobile */
+    }
+
+    section {
+        padding: 10px;
+        margin-top: 30px;
+    }
+}
