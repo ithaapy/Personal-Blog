@@ -1,10 +1,9 @@
-/* Import warna dan reset dari main file */
 :root {
-    --one:#f7cac9;
+    --one: #f7cac9;
     --two: #dec2cb;
     --four: #abb1cf;
     --five: #92a8d1;
-    --six:  #5d79aa;
+    --six: #5d79aa;
 }
 
 /* Reset */
@@ -22,10 +21,9 @@ html {
 body {
     color: #333;
     background: linear-gradient(var(--one), var(--two), var(--four), var(--five));
-
     min-height: 100vh;
     line-height: 1.6;
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
 .main-nav {
@@ -41,18 +39,14 @@ body {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-nav ul {
+.main-nav ul {
     list-style: none;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     gap: 50px;
     justify-content: center;
-    margin: 0;
-    padding: 0;
 }
 
-nav ul li a {
+.main-nav ul li a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
@@ -63,7 +57,7 @@ nav ul li a {
     display: block;
 }
 
-nav ul li a::before {
+.main-nav ul li a::before {
     content: '';
     position: absolute;
     inset: 0;
@@ -73,57 +67,52 @@ nav ul li a::before {
     transition: transform 0.3s ease;
 }
 
-nav ul li a:hover::before {
+.main-nav ul li a:hover::before {
     transform: scale(1);
 }
 
-nav ul li a:hover {
+.main-nav ul li a:hover {
     color: var(--six);
-}
-
-
-
-/* Hover bubble */
-.sub-nav ul li a:hover {
-    color: var(--four);
-    transform: none;
 }
 
 .content-box {
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(10px);
-    padding: 50px 50px;
-    margin: 80px auto 40px;    
+    padding: 50px;
+    margin: 40px auto;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     max-width: 1000px;
 }
 
-.content-box h1 {
-    margin-bottom: 20px;
-}
-
-
-/* Heading */
+/* Typography */
 h1, h2, h4 {
     color: #4b5f8a;
     margin-bottom: 10px;
     scroll-margin-top: 100px;
 }
 
-b {
-    color: #5a6f9c;
+p {
+    margin-bottom: 16px;
 }
 
 ul {
     margin-bottom: 40px;
 }
 
+ul li {
+    list-style: none;
+    margin-bottom: 20px;
+}
 
+b {
+    color: #5a6f9c;
+}
 
 a {
     color: var(--six);
 }
+
 a:hover {
     color: var(--four);
 }
