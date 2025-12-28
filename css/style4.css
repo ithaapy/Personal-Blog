@@ -53,7 +53,7 @@ body {
     );
     min-height: 100vh;
     line-height: 1.6;
-    padding-top: 80px; /* Ditingkatkan untuk nav yang lebih tinggi */
+    padding-top: 80px;
 }
 
 /*====== NAVIGATION ======*/
@@ -87,7 +87,7 @@ nav ul li a {
     font-weight: 500;
     padding: 10px 15px;
     border-radius: 20px;
-    transition: all 0.3s ease; /* Lebih halus */
+    transition: all 0.3s ease;
     position: relative;
     display: block;
     width: auto;
@@ -104,7 +104,7 @@ nav ul li a::before {
     border-radius: 20px;
     transform: scale(0);
     transition: transform 0.3s ease;
-    will-change: transform; /* Optimasi performa */
+    will-change: transform;
 }
 
 nav ul li a:hover::before {
@@ -116,29 +116,12 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
-/* Menu Hamburger untuk Mobile */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background: #333;
-    margin: 3px 0;
-    transition: 0.3s;
-}
-
 /*====== SECTION ======*/
 section {
     padding: 20px;
     margin-top: 50px;
-    scroll-margin-top: 120px; /* Sesuaikan dengan nav */
+    scroll-margin-top: 120px;
+    position: relative; /* Untuk pembatas */
 }
 
 section ul {
@@ -150,15 +133,46 @@ section ul li {
     margin-bottom: 6px;
 }
 
-/* Kelas umum untuk semua bagian utama (mengganti .homeText, .profileText, .portofolioText) */
+/* Kelas umum untuk semua bagian utama */
 .section-content {
     max-width: 100%;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.55);
-    backdrop-filter: blur(10px);
     padding: 40px 50px;
     border-radius: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+/* Warna berbeda untuk setiap section (bubble terpisah) */
+#home .section-content {
+    background: rgba(146, 168, 209, 0.55); /* Biru muda untuk home */
+}
+
+#profile .section-content {
+    background: rgba(247, 202, 201, 0.55); /* Pink untuk profile */
+}
+
+#portofolio .section-content {
+    background: rgba(171, 177, 207, 0.55); /* Ungu untuk portofolio */
+}
+
+/* Pembatas (divider) antara section */
+section::after {
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--six), transparent);
+    opacity: 0.5;
+}
+
+/* Hilangkan pembatas di section terakhir */
+#portofolio::after {
+    display: none;
 }
 
 /* Khusus untuk Home: Layout responsif */
@@ -181,14 +195,14 @@ section ul li {
 
 /*====== HEADING ======*/
 h1 {
-    font-size: clamp(28px, 5vw, 32px); /* Responsif: minimum 28px, maks 32px */
+    font-size: clamp(28px, 5vw, 32px);
     color: var(--six);
     margin-bottom: 10px;
     letter-spacing: 1px;
 }
 
 h3 {
-    font-size: clamp(20px, 4vw, 22px); /* Responsif */
+    font-size: clamp(20px, 4vw, 22px);
     margin-top: 25px;
     margin-bottom: 10px;
     color: var(--glaucous);
@@ -217,38 +231,21 @@ a:hover {
     opacity: 0.8;
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(8px);
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05); /* Bayangan atas untuk efek floating */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /*====== RESPONSIVITAS (Media Queries) ======*/
 @media (max-width: 768px) {
     body {
-        padding-top: 70px; /* Kurangi untuk mobile */
+        padding-top: 70px;
     }
 
     nav ul {
-        display: none; /* Sembunyikan menu default */
-        flex-direction: column;
         gap: 20px;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.9);
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    nav ul.active {
-        display: flex; /* Tampilkan saat aktif */
-    }
-
-    .hamburger {
-        display: flex; /* Tampilkan hamburger */
     }
 
     .homeContainer {
-        flex-direction: column; /* Stack vertikal di mobile */
+        flex-direction: column;
         gap: 30px;
         text-align: center;
     }
@@ -259,11 +256,17 @@ a:hover {
     }
 
     .section-content {
-        padding: 20px 25px; /* Kurangi padding di mobile */
+        padding: 20px 25px;
     }
 
     section {
         padding: 10px;
         margin-top: 30px;
+    }
+
+    /* Pembatas lebih tipis di mobile */
+    section::after {
+        width: 60%;
+        height: 1px;
     }
 }
