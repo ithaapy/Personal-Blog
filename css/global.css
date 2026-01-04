@@ -85,7 +85,7 @@ nav ul li a:hover::before {
 
 /* LAYOUT KONTEN  */
 .section-content, .content-box {
-    max-width: 85%; 
+    max-width: 90%; 
     margin: 40px auto;
     padding: 40px;
     border-radius: 20px;
@@ -177,4 +177,5 @@ hr {
         height: 180px;
     }
 }
+
 }
