@@ -84,7 +84,7 @@ nav ul li a:hover::before {
 }
 
 /* LAYOUT KONTEN  */
-.section-content, .content-box {
+.content-box {
     max-width: 90%; 
     margin: 40px auto;
     padding: 40px;
@@ -92,6 +92,15 @@ nav ul li a:hover::before {
     background: rgba(255, 255, 255, 0.55);
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+.section-content {
+    max-width: 1200px; 
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); 
 }
 
 /* Home Container */
@@ -179,3 +188,4 @@ hr {
 }
 
 }
+
